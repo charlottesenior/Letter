@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sealed Letter</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#1a1a1a;
+    font-family:'Cinzel',serif;
+}
+
+/* wax seal screen */
+
+#sealScreen{
+    text-align:center;
+    color:white;
+}
+
+.seal{
+    width:120px;
+    height:120px;
+    background:#7a0f0f;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(0,0,0,0.6);
+    margin:auto;
+}
+
+.seal:hover{
+    transform:scale(1.05);
+}
+
+/* letter */
+
+#letter{
+    display:none;
+    width:650px;
+    max-width:90%;
+    padding:60px;
+    background:#f4ecd8;
+    background-image:linear-gradient(#f4ecd8,#e6dcc4);
+    border:8px solid #b89b6b;
+    box-shadow:0 0 40px rgba(0,0,0,0.7);
+    font-family:'Uncial Antiqua',serif;
+    animation:fadeIn 2s;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+    text-align:center;
+    margin-top:0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="sealScreen">
+    <p>Click the seal to open the letter</p>
+    <div class="seal" onclick="openLetter()">🜂</div>
+</div>
+
+<div id="letter">
+<h1>A Sealed Message</h1>
+
+<p>
+My dear reader,
+</p>
+
+<p>
+This is where your letter goes. Replace this text with whatever
+message you want to send.
+</p>
+
+<p>
+You can make it romantic, mysterious, or dramatic.
+</p>
+
+<p>
+Written and sealed on this day.
+</p>
+
+<p>
+— Your Name
+</p>
+
+</div>
+
+<script>
+
+function openLetter(){
+document.getElementById("sealScreen").style.display="none";
+document.getElementById("letter").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
